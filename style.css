@@ -9,6 +9,57 @@ html, body {
 
 main {
     margin: 0;
+    color: white;
+}
+
+h1,
+h2,
+p {
+    text-align: center;
+}
+
+section ul {
+    max-width: 680px;
+    margin: 0 auto;
+    padding-inline-start: 1.5rem;
+}
+
+.hero {
+    margin: 1rem auto 0;
+    max-width: 760px;
+}
+
+.hero-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0.4rem 0;
+}
+
+.hero-summary {
+    margin: 0;
+}
+
+.cta-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.cta-btn {
+    text-decoration: none;
+    background-color: white;
+    color: rgb(43, 43, 43);
+    padding: 0.5rem 0.9rem;
+    border-radius: 4px;
+    box-shadow: 1px 1px rgb(172, 172, 172);
+    font-weight: 600;
+}
+
+.cta-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 1px 1px magenta;
 }
 
 .img-container {
