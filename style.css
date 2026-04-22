@@ -8,7 +8,6 @@
     --line-height-base: 1.6;
 
     --color-page-bg: #0f172a;
-    --color-page-bg-soft: #1e293b;
     --color-text: #e2e8f0;
     --color-text-strong: #f8fafc;
     --color-text-soft: #cbd5e1;
@@ -44,7 +43,7 @@ body {
     line-height: var(--line-height-base);
     color: var(--color-text);
     background-color: var(--color-page-bg);
-    background-image: radial-gradient(circle at 50% -20%, #334155 0%, var(--color-page-bg) 55%, #0b1120 100%);
+    background-image: linear-gradient(180deg, #1e293b 0%, var(--color-page-bg) 45%, #0b1120 100%);
 }
 
 a {
@@ -100,6 +99,11 @@ footer {
 
 .hero-summary {
     color: var(--color-text-soft);
+}
+
+.hero {
+    margin: var(--space-md) auto 0;
+    max-width: 65ch;
 }
 
 .img-container {
