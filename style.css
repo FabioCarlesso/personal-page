@@ -12,10 +12,9 @@ main {
 }
 
 .img-container {
-    height: 100px;
-    width: 100px;
-    margin: 0 auto;
-    margin-top: 20px;
+    width: clamp(80px, 20vw, 100px);
+    height: clamp(80px, 20vw, 100px);
+    margin: 20px auto 0;
 }
 
 .img {
@@ -38,8 +37,8 @@ main {
     text-decoration: none;
     box-shadow: 1px 1px rgb(172, 172, 172);
     border-radius: 2px;
-    margin-bottom: 10px;
     background-color: rgb(255, 255, 255);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .some-link:hover {
@@ -52,12 +51,12 @@ main {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
+    gap: 10px;
     padding: 10px;
 }
 
 .external-link {
     display: block;
-    /*text-align: center;*/
     box-shadow: 2px 2px rgb(172, 172, 172);
     background-color: rgb(255, 255, 255);
     text-decoration: none;
@@ -67,6 +66,14 @@ main {
     border-radius: 4px;
     flex-basis: 100%;
     font-size: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.external-link ul {
+    margin-top: 0;
+    padding-left: 1.2rem;
+    border-top: 1px solid rgb(220, 220, 220);
+    padding-top: 0.6rem;
 }
 
 .external-link:hover {
@@ -78,7 +85,6 @@ main {
     margin: 0.2rem 0;
     color: rgb(27, 27, 27);
     font-size: 0.8rem;
-
 }
 
 .username {
@@ -89,9 +95,21 @@ main {
     margin: 10px;
     display: block;
     text-decoration: none;
+    transition: color 0.2s ease;
 }
+
 .username:hover {
     color: magenta;
+}
+
+@media screen and (max-width: 360px) {
+    /* SMALL MOBILE */
+    .some-icons-container {
+        padding: 6px;
+    }
+    .external-link {
+        font-size: 0.9rem;
+    }
 }
 
 @media screen and (min-width: 600px) {
@@ -102,9 +120,6 @@ main {
     }
     .some-icons-container {
         justify-content: center;
-    }
-    .some-link {
-        margin: 0.4rem;
     }
 }
 
