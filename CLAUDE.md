@@ -19,6 +19,7 @@ Deployment is fully automated via GitHub Actions (`.github/workflows/main.yml`):
 Multi-page static site — one `.html` per route (no client-side router, so deep links and SEO work on plain FTP hosting):
 
 - `index.html` (home), `work.html`, `about.html`, `writing.html`, `contact.html`.
+  - **`writing.html` is currently hidden** (no real posts yet): its nav link, footer link and the home "recent writing" section are commented out with a `writing: hidden until first post` marker, and the page is `noindex`. The file is kept intact — search that marker and uncomment to re-enable.
 - Each page repeats the same `<head>` (fonts, favicons, Open Graph), sticky `.topbar`, and `.footer` shell — **keep these in sync when editing**.
 - `css/tokens.css` — design tokens (color/type/spacing/radii). The contract: every value elsewhere must be `var(--fc-*)`, never a raw hex/px.
 - `css/style.css` — all component and page styles + the responsive layer (breakpoints at `1024px` and `720px`).
