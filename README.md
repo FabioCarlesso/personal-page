@@ -9,10 +9,10 @@ Plain HTML, CSS and a single vanilla-JS file — no framework, no build step, no
 
 | Path | Purpose |
 |---|---|
-| `index.html` | Home — hero with animated terminal, tech marquee, featured work, about preview, recent writing, hire-me CTA |
+| `index.html` | Home — hero with animated terminal, tech marquee, featured work, about preview, hire-me CTA |
 | `work.html` | Project gallery with client-side filter + Cartola Odds case study |
 | `about.html` | Long-form bio, career timeline, certifications grid |
-| `writing.html` | Blog index (sample posts) + subscribe block |
+| `writing.html` | Blog index (sample posts) + subscribe block — **currently hidden** (no nav/footer/home links, `noindex`) until the first real post |
 | `contact.html` | Contact methods + terminal-styled form |
 | `css/tokens.css` | Design tokens (colors, type, spacing, radii) — the contract. Every value elsewhere is `var(--fc-*)` |
 | `css/style.css` | All component + page styles, responsive layer |
@@ -51,3 +51,4 @@ Secrets required in the repository settings:
 - **Contact form** is a client-side stub. Wire `#contact-form` in `js/site.js` to a real endpoint (e.g. Formspree) — see the `TODO(deploy)` marker.
 - **Subscribe form** likewise needs a newsletter provider.
 - Sample blog posts and project copy are placeholders — replace with real content.
+- **Writing is hidden** until the first real post. The page file is kept; its nav link, footer link and the home "recent writing" section are commented out and `writing.html` is `noindex`. To re-enable, search `writing: hidden until first post` across the HTML and uncomment those blocks.
