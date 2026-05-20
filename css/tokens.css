@@ -1,0 +1,88 @@
+/* ============================================================
+   FABIO CARLESSO — DESIGN TOKENS v1.0
+   Dark-first sistema técnico com personalidade
+   ============================================================ */
+
+:root {
+  /* —— Core palette ——————————————————————————————— */
+  --fc-ink:        #0a0d10;   /* obsidian — backgrounds primários */
+  --fc-ink-2:      #11161b;   /* surface elevation 1 */
+  --fc-ink-3:      #1a2128;   /* surface elevation 2 */
+  --fc-ink-4:      #242c35;   /* borders / dividers em dark */
+
+  --fc-paper:      #f5f1ea;   /* off-white quente — light surfaces */
+  --fc-paper-2:    #ebe6dc;   /* paper elevation */
+  --fc-paper-3:    #ddd5c6;   /* borders em light */
+
+  --fc-bone:       #fafaf7;   /* near-white para máximo contraste */
+
+  /* —— Accents ——————————————————————————————————— */
+  --fc-green:      #3fb950;   /* terminal green — accent primário */
+  --fc-green-soft: #2ea043;
+  --fc-green-glow: rgba(63, 185, 80, 0.18);
+
+  --fc-amber:      #e3b341;   /* 42 / easter eggs / highlights */
+  --fc-amber-soft: #d29922;
+
+  --fc-rust:       #c8602a;   /* secundário quente raro */
+  --fc-rust-soft:  #a04d20;
+
+  /* —— Text ————————————————————————————————————— */
+  --fc-text-hi:    #f0f3f7;
+  --fc-text:       #d6dde4;
+  --fc-text-mid:   #8b949e;
+  --fc-text-low:   #6e7681;
+  --fc-text-faint: #484f58;
+
+  /* Light context */
+  --fc-text-ink-hi:  #0a0d10;
+  --fc-text-ink:     #2a3038;
+  --fc-text-ink-mid: #5a6470;
+  --fc-text-ink-low: #8a929c;
+
+  /* —— Type ————————————————————————————————————— */
+  --fc-font-display: "JetBrains Mono", ui-monospace, monospace;
+  --fc-font-mono:    "JetBrains Mono", ui-monospace, monospace;
+  --fc-font-body:    "IBM Plex Sans", system-ui, sans-serif;
+  --fc-font-serif:   "IBM Plex Serif", Georgia, serif;
+
+  /* —— Scale ————————————————————————————————————— */
+  --fc-size-xs:   12px;
+  --fc-size-sm:   13px;
+  --fc-size-base: 15px;
+  --fc-size-md:   17px;
+  --fc-size-lg:   20px;
+  --fc-size-xl:   28px;
+  --fc-size-2xl:  40px;
+  --fc-size-3xl:  60px;
+  --fc-size-4xl:  92px;
+  --fc-size-5xl:  140px;
+
+  /* —— Spacing ————————————————————————————————— */
+  --fc-s-1: 4px;
+  --fc-s-2: 8px;
+  --fc-s-3: 12px;
+  --fc-s-4: 16px;
+  --fc-s-5: 24px;
+  --fc-s-6: 32px;
+  --fc-s-7: 48px;
+  --fc-s-8: 64px;
+  --fc-s-9: 96px;
+  --fc-s-10: 128px;
+
+  /* —— Radii ————————————————————————————————————— */
+  --fc-r-0: 0;
+  --fc-r-1: 2px;
+  --fc-r-2: 4px;
+  --fc-r-3: 6px;
+  --fc-r-4: 8px;
+  --fc-r-pill: 999px;
+
+  /* —— Borders ————————————————————————————————— */
+  --fc-border-dark:  1px solid var(--fc-ink-4);
+  --fc-border-light: 1px solid var(--fc-paper-3);
+
+  /* —— Grid ————————————————————————————————————— */
+  --fc-container: 1280px;
+  --fc-gutter: 32px;
+}

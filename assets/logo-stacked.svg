@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 280" width="320" height="280" role="img" aria-label="fc() — stacked lockup">
+  <title>fc() — stacked</title>
+  <defs></defs>
+  <text x="160" y="148" text-anchor="middle" class="mark"><tspan class="accent">(</tspan><tspan class="ink">fc</tspan><tspan class="accent">)</tspan></text>
+  <line x1="80" y1="178" x2="240" y2="178" stroke="#6E7681" stroke-width="1"></line>
+  <text x="160" y="212" text-anchor="middle" class="name ink">FABIO CARLESSO</text>
+  <text x="160" y="240" text-anchor="middle" class="sub muted">BACKEND · JAVA · AWS</text>
+</svg>

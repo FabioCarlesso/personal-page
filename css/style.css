@@ -1,0 +1,153 @@
+/* ============================================================
+   FABIO CARLESSO — (fc) design system · site styles
+   Ported from handoff/design-references to static multi-page HTML.
+   Tokens are the contract — every value below is var(--fc-*).
+   ============================================================ */
+
+/* —— Reset ————————————————————————————————————————— */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--fc-ink);
+  color: var(--fc-text);
+  font-family: var(--fc-font-body);
+  font-size: var(--fc-size-base);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+::selection { background: var(--fc-green); color: var(--fc-ink); }
+
+a { color: inherit; text-decoration: none; cursor: pointer; }
+
+img { max-width: 100%; display: block; }
+
+button { font-family: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--fc-green);
+  outline-offset: 2px;
+  border-radius: var(--fc-r-1);
+}
+
+/* —— Background — subtle grid + glow ——————————————— */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 56px 56px;
+  pointer-events: none;
+  z-index: 0;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(63, 185, 80, 0.05), transparent 50%),
+    radial-gradient(circle at 80% 90%, rgba(227, 179, 65, 0.03), transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* —— Layout shell —————————————————————————————————— */
+.site {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: var(--fc-container);
+  margin: 0 auto;
+  padding: 0 var(--fc-gutter);
+  width: 100%;
+}
+.container--tight { max-width: 980px; }
+
+.page {
+  animation: fadeUp 0.4s ease-out;
+  padding: 80px 0 120px;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* —— Brand mark: (fc) ——————————————————————————————— */
+.logo-fc {
+  font-family: var(--fc-font-mono);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--fc-text-hi);
+  line-height: 1;
+  white-space: nowrap;
+}
+.logo-fc .paren { color: var(--fc-green); }
+
+/* —— Generic utilities ————————————————————————————— */
+.mono  { font-family: var(--fc-font-mono); }
+.green { color: var(--fc-green); }
+.amber { color: var(--fc-amber); }
+.muted { color: var(--fc-text-mid); }
+.faint { color: var(--fc-text-low); }
+.row { display: flex; align-items: center; gap: 12px; }
+.col { display: flex; flex-direction: column; }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* —— Common section bits ——————————————————————————— */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--fc-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fc-green);
+  margin-bottom: 24px;
+}
+.kicker::before { content: "//"; opacity: 0.6; }
+.kicker--bare::before { content: ""; }
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--fc-ink-4);
+  gap: 24px;
+}
+.section-head h2 {
+  font-family: var(--fc-font-mono);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--fc-text-hi);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.section-head .sub {
+  font-family: var(--fc-font-mono);
+  font-size: 12px;
+  color: var(--fc-text-low);
+  letter-spacing: 0.04em;
+}
+
+.h-display {
+  font-family: var(--fc-font-mono);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+  color: var(--fc-text-hi);
+}
