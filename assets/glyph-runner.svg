@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Run, Fabio! Run!">
+  <title>Run, Fabio! Run!</title>
+  <g fill="none" stroke="#3FB950" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="28" cy="9" r="3.5" fill="#3FB950"></circle>
+    <path d="M27 13 L23 25 L17 24"></path>
+    <path d="M23 16 L34 19"></path>
+    <path d="M23 16 L13 13"></path>
+    <path d="M23 25 L30 38 L36 38"></path>
+    <path d="M23 25 L13 36"></path>
+    <line x1="2" y1="14" x2="9" y2="14" stroke-width="1.6" opacity="0.6"></line>
+    <line x1="0" y1="20" x2="8" y2="20" stroke-width="1.6" opacity="0.4"></line>
+    <line x1="3" y1="26" x2="9" y2="26" stroke-width="1.6" opacity="0.25"></line>
+  </g>
+</svg>

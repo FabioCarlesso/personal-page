@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140" width="200" height="140" role="img" aria-label="[42] — the ultimate answer">
+  <title>[42] — the answer</title>
+  <defs></defs>
+  
+  <path d="M30 24 L18 24 L18 116 L30 116" stroke="#E3B341" stroke-width="4" fill="none" stroke-linecap="square"></path>
+  
+  <text x="100" y="100" text-anchor="middle">42</text>
+  
+  <path d="M170 24 L182 24 L182 116 L170 116" stroke="#E3B341" stroke-width="4" fill="none" stroke-linecap="square"></path>
+</svg>
