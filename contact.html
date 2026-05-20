@@ -53,7 +53,7 @@
                     <div class="kicker kicker--bare">/contact</div>
                     <h1 class="h-display" style="font-size:80px;margin-bottom:32px">Let's talk<br><span class="green">backend.</span></h1>
 
-                    <div class="contact-grid">
+                    <div class="contact-grid contact-grid--solo">
                         <!-- Left: methods -->
                         <div class="contact-left">
                             <p class="lede">Open for select consulting from <span class="green">Q3 2026</span>. Backend systems, API design, code review, mentoring teams shipping Java in regulated environments.</p>
@@ -93,7 +93,11 @@
                             </div>
                         </div>
 
-                        <!-- Right: terminal form -->
+                        <!-- contact form: disabled until backend wired — the terminal form
+                             didn't send any email (client-side stub), so it was misleading.
+                             Kept intact: search this marker and uncomment once #contact-form
+                             is wired to a real endpoint (see TODO(deploy) in js/site.js),
+                             then remove the "solo" grid modifier above to restore 2 columns.
                         <div class="contact-right">
                             <div class="form-bar">
                                 <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
@@ -133,6 +137,7 @@
                                 </div>
                             </div>
                         </div>
+                        -->
                     </div>
                 </div>
             </section>

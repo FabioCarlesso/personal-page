@@ -13,7 +13,7 @@ Plain HTML, CSS and a single vanilla-JS file — no framework, no build step, no
 | `work.html` | Project gallery with client-side filter + Cartola Odds case study |
 | `about.html` | Long-form bio, career timeline, certifications grid |
 | `writing.html` | Blog index (sample posts) + subscribe block — **currently hidden** (no nav/footer/home links, `noindex`) until the first real post |
-| `contact.html` | Contact methods + terminal-styled form |
+| `contact.html` | Contact methods (email, GitHub, LinkedIn). The terminal-styled form is **disabled** (commented out) until it's wired to a real backend |
 | `css/tokens.css` | Design tokens (colors, type, spacing, radii) — the contract. Every value elsewhere is `var(--fc-*)` |
 | `css/style.css` | All component + page styles, responsive layer |
 | `js/site.js` | Terminal typing animation, `/work` filter, mobile nav, client-side form handling |
@@ -48,7 +48,7 @@ Secrets required in the repository settings:
 
 ## TODO before / after launch
 
-- **Contact form** is a client-side stub. Wire `#contact-form` in `js/site.js` to a real endpoint (e.g. Formspree) — see the `TODO(deploy)` marker.
+- **Contact form is disabled.** It was a client-side stub that never sent any email, so it was commented out to avoid misleading visitors — the page now offers email, GitHub and LinkedIn instead. The markup is kept intact in `contact.html`: search `contact form: disabled until backend wired`, wire `#contact-form` in `js/site.js` to a real endpoint (e.g. Formspree — see the `TODO(deploy)` marker), uncomment the block and drop the `contact-grid--solo` class to re-enable.
 - **Subscribe form** likewise needs a newsletter provider.
 - Sample blog posts and project copy are placeholders — replace with real content.
 - **Writing is hidden** until the first real post. The page file is kept; its nav link, footer link and the home "recent writing" section are commented out and `writing.html` is `noindex`. To re-enable, search `writing: hidden until first post` across the HTML and uncomment those blocks.

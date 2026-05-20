@@ -790,6 +790,8 @@ body::after {
    CONTACT
    ============================================================ */
 .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; }
+/* Single-column variant used while the contact form is disabled (no backend). */
+.contact-grid--solo { grid-template-columns: 1fr; max-width: 640px; }
 .contact-left .lede { font-size: 17px; color: var(--fc-text); margin-bottom: 32px; line-height: 1.6; max-width: 50ch; }
 .methods { display: flex; flex-direction: column; gap: 8px; margin-bottom: 32px; }
 .method {
