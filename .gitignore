@@ -1,0 +1,5 @@
+# Design handoff bundle — reference only, never deployed
+handoff/
+
+# OS / editor cruft
+.DS_Store
