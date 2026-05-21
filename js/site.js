@@ -4,6 +4,7 @@
    - hero terminal typing animation
    - /work filter bar
    - contact + subscribe form handling (client-side only)
+   - pt/en i18n
    All guarded by element presence so one file serves every page.
    ============================================================ */
 (function () {
@@ -12,7 +13,236 @@
   var reduceMotion = window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* —— Mobile nav toggle ————————————————————————————— */
+  /* —— i18n translations ————————————————————————— */
+  var TRANSLATIONS = {
+    en: {
+      "topbar.status": "available · q3 '26",
+      "nav.home": "home",
+      "nav.work": "work",
+      "nav.about": "about",
+      "nav.contact": "contact",
+      "footer.brand.h3": "Backend engineering, in writing.",
+      "footer.brand.p": "Java &amp; Spring Boot since 2010. Foz do Iguaçu, Brazil. Available for select consulting and full-time roles.",
+      "footer.site": "Site",
+      "footer.nav.home": "Home",
+      "footer.nav.work": "Work",
+      "footer.nav.about": "About",
+      "footer.elsewhere": "Elsewhere",
+      "footer.contact.label": "Contact",
+      "footer.copyright": "© 2026 Fabio Nami Carlesso · all rights reserved",
+      "home.kicker": "Backend Software Engineer · Foz do Iguaçu, BR",
+      "home.hero.h1": 'Building APIs<br>that <span class="green">hold up</span><br>in production.',
+      "home.hero.lede": "Java &amp; Spring Boot since 2010. AWS-certified. Banking-sector pragmatic.<br>I design readable APIs, break problems into testable pieces, and keep the cluster green.",
+      "home.hero.cta.primary": "View case studies",
+      "home.hero.stat.years": "years in prod",
+      "home.hero.stat.stack": "core stack",
+      "home.hero.stat.cert": "certified",
+      "home.work.kicker": "selected work · open source",
+      "home.work.h2": "Things that ship.",
+      "home.work.sub": "6 public projects · github.com/FabioCarlesso",
+      "home.work.all": "all work",
+      "home.about.kicker": "about",
+      "home.about.h2": 'Senior backend engineer.<br><span class="muted">Production scars. Working code.</span>',
+      "home.about.lede": "Developer working in the banking sector, with 15+ years of experience building and monitoring software using Java, Spring Boot, Python and agile practices.",
+      "home.about.sub": 'Off-keyboard I play and watch soccer, watch movies and series, read books, listen to music, and occasionally philosophize about the meaning of life, the universe, and everything <span class="amber">(42)</span> over a cold beer.',
+      "home.about.link": "full story →",
+      "home.cta.h2": 'Got an API that<br><span class="green">won\'t hold up?</span>',
+      "home.cta.lede": "Open for select consulting from Q3 2026. Backend systems, code review, mentoring teams shipping Java in regulated environments.",
+      "proj.cartolaoddsapi": "REST API that helps build the best Cartola FC fantasy football team using odds-based heuristics.",
+      "proj.carlessopilatesapi": "REST API for managing patients and professionals of a pilates studio. Domain-driven, fully tested.",
+      "proj.goodfunds": "Personal-finance MVP. End-to-end study project — auth, transactions, budgets, monthly close.",
+      "proj.carlessopilatesfe": "Web interface for pilates studio administration. Patient flows, scheduling, billing.",
+      "proj.cartolaoddsfe": "Angular frontend for the Cartola Odds project. Pulls from the API, ranks players, renders a draft picker.",
+      "proj.designpatterns": "Hands-on walkthrough of the GoF design patterns in idiomatic Java. Strategy, observer, builder, decorator.",
+      "proj.algoritmos": "Algorithm and data-structure practice. Sorts, trees, graph traversals — kept sharp on weekends.",
+      "proj.status.live": "● live",
+      "proj.status.study": "● study",
+      "proj.status.archived": "● archived",
+      "about.h1": '15 years.<br>Mostly Java.<br><span class="green">Still curious.</span>',
+      "about.p1": "I'm Fabio. I write backend systems — mostly in Java, mostly for banks, mostly in production. The kind of code that runs all night, gets paged at 3am, and has to be debuggable by the person on call who isn't me.",
+      "about.p2": "I started in 2010 with Java 6 and IBM WebSphere — yes, really. Twelve years later I was deploying Spring Boot 3 services to AWS containers. The stack changed; the underlying craft didn't. Read the stack trace. Trust the compiler. Write tests you'd want to read at 2am.",
+      "about.p3": 'When I\'m not on the keyboard I\'m at the field — playing or watching soccer — or running, or reading something dense, or arguing with friends over a cold beer about whether <span class="amber">42</span> is actually a satisfying answer. (It is. The question is the problem.)',
+      "about.timeline.kicker": "timeline",
+      "about.timeline.h2": "A career, in milestones.",
+      "tl.2010": "First Java line in production. The journey begins.",
+      "tl.2013": "B.S. in Computer Science. Bachelor's degree.",
+      "tl.2016": "Postgraduate — Specialist in Java Technology.",
+      "tl.2018": "Joined the banking sector. Production scale, regulated environments.",
+      "tl.2019": "EXIN Agile Scrum Foundation certification.",
+      "tl.2022": "Postgraduate — Specialist in Data Science &amp; Big Data.",
+      "tl.2023": "AWS Certified Cloud Practitioner.",
+      "tl.2024": "Side-projects shipped: Cartola Odds, Carlesso Pilates platform.",
+      "tl.2026": "Open to select consulting · still running the algorithm.",
+      "about.certs.kicker": "education · certifications",
+      "about.certs.h2": "Paper trail.",
+      "about.certs.sub": "// 5 credentials",
+      "cert.aws.title": "AWS Certified Cloud Practitioner",
+      "cert.aws.desc": "Amazon Web Services",
+      "cert.data.title": "Data Science &amp; Big Data Specialist",
+      "cert.data.desc": "Postgraduate",
+      "cert.scrum.title": "EXIN Agile Scrum Foundation",
+      "cert.scrum.desc": "EXIN International",
+      "cert.java.title": "Java Technology Specialist",
+      "cert.java.desc": "Postgraduate",
+      "cert.bs.title": "B.S. Computer Science",
+      "cert.bs.desc": "Bachelor's degree",
+      "cert.easter.title": "The Ultimate Answer",
+      "cert.easter.desc": "self-awarded · perpetual",
+      "work.h1": 'Public code. <span class="muted">Mostly Java.</span>',
+      "work.intro": "28 public repositories on GitHub. The ones below are the projects I keep returning to — APIs for problems I actually care about. Open source, MIT, fork at your peril.",
+      "work.filter.all": "all",
+      "work.filter.backend": "backend",
+      "work.filter.frontend": "frontend",
+      "work.filter.live": "live",
+      "work.filter.archived": "archived",
+      "work.github": "view all on github →",
+      "work.empty": "// 0 results — try a different filter",
+      "work.cs.kicker": "case study · cartolaoddsapi",
+      "work.cs.h2": "Building an odds-based draft engine for fantasy football.",
+      "work.cs.stat.lines": "lines of java",
+      "work.cs.stat.coverage": "test coverage",
+      "work.cs.stat.latency": "p50 latency",
+      "work.cs.stat.weekend": "weekend, mostly",
+      "work.cs.problem.h3": "The problem",
+      "work.cs.problem.p": "Every Brazilian dev wants to win Cartola FC. Most pick by gut. I wanted to pick by math — combining public match odds, player form, and team context into a single ranked draft.",
+      "work.cs.approach.h3": "The approach",
+      "work.cs.approach.p": "A Spring Boot service with a scheduler that pulls public odds nightly, normalizes them per position, and exposes a clean REST API. Heuristics are pluggable — strategies live behind an interface so I can A/B them across rounds.",
+      "work.cs.learned.h3": "What I learned",
+      "work.cs.learned.p": "The hardest part wasn't the math. It was the data hygiene — players change clubs mid-season, odds providers shift formats, the API breaks every other Monday. Idempotent ingestion plus a careful retry strategy saved me.",
+      "work.cs.source": "view source",
+      "contact.h1": 'Let\'s talk<br><span class="green">backend.</span>',
+      "contact.lede": 'Open for select consulting from <span class="green">Q3 2026</span>. Backend systems, API design, code review, mentoring teams shipping Java in regulated environments.',
+      "contact.response.label": "// AVERAGE RESPONSE",
+      "contact.response.time": "&lt; 24h on weekdays"
+    },
+    pt: {
+      "topbar.status": "disponível · q3 '26",
+      "nav.home": "início",
+      "nav.work": "trabalho",
+      "nav.about": "sobre",
+      "nav.contact": "contato",
+      "footer.brand.h3": "Engenharia backend, por escrito.",
+      "footer.brand.p": "Java &amp; Spring Boot desde 2010. Foz do Iguaçu, Brasil. Disponível para consultoria selecionada e posições full-time.",
+      "footer.site": "Site",
+      "footer.nav.home": "Início",
+      "footer.nav.work": "Trabalho",
+      "footer.nav.about": "Sobre",
+      "footer.elsewhere": "Outras redes",
+      "footer.contact.label": "Contato",
+      "footer.copyright": "© 2026 Fabio Nami Carlesso · todos os direitos reservados",
+      "home.kicker": "Engenheiro de Software Backend · Foz do Iguaçu, BR",
+      "home.hero.h1": 'Construindo APIs<br>que <span class="green">aguentam</span><br>em produção.',
+      "home.hero.lede": "Java &amp; Spring Boot desde 2010. Certificado AWS. Pragmático do setor bancário.<br>Projeto APIs legíveis, divido problemas em partes testáveis e mantenho o cluster verde.",
+      "home.hero.cta.primary": "Ver casos de uso",
+      "home.hero.stat.years": "anos em prod",
+      "home.hero.stat.stack": "stack principal",
+      "home.hero.stat.cert": "certificado",
+      "home.work.kicker": "trabalho selecionado · código aberto",
+      "home.work.h2": "Coisas que entram em produção.",
+      "home.work.sub": "6 projetos públicos · github.com/FabioCarlesso",
+      "home.work.all": "todo o trabalho",
+      "home.about.kicker": "sobre",
+      "home.about.h2": 'Engenheiro backend sênior.<br><span class="muted">Cicatrizes de produção. Código que funciona.</span>',
+      "home.about.lede": "Desenvolvedor no setor bancário, com 15+ anos de experiência construindo e monitorando software com Java, Spring Boot, Python e práticas ágeis.",
+      "home.about.sub": 'Fora do teclado jogo e assisto futebol, filmes e séries, leio livros, ouço música e eventualmente filosofo sobre o significado da vida, o universo e tudo mais <span class="amber">(42)</span> com uma cerveja gelada.',
+      "home.about.link": "história completa →",
+      "home.cta.h2": 'Tem uma API que<br><span class="green">não aguenta?</span>',
+      "home.cta.lede": "Disponível para consultoria selecionada a partir do Q3 2026. Sistemas backend, revisão de código, mentoria para times entregando Java em ambientes regulados.",
+      "proj.cartolaoddsapi": "API REST que ajuda a montar o melhor time no Cartola FC usando heurísticas baseadas em odds.",
+      "proj.carlessopilatesapi": "API REST para gerenciar pacientes e profissionais de um estúdio de pilates. Domain-driven, totalmente testada.",
+      "proj.goodfunds": "MVP de finanças pessoais. Projeto de estudo end-to-end — autenticação, transações, orçamentos, fechamento mensal.",
+      "proj.carlessopilatesfe": "Interface web para administração do estúdio de pilates. Fluxos de pacientes, agendamento, faturamento.",
+      "proj.cartolaoddsfe": "Frontend Angular para o projeto Cartola Odds. Consome a API, classifica jogadores e renderiza o seletor de escalação.",
+      "proj.designpatterns": "Guia prático dos padrões de design GoF em Java idiomático. Strategy, observer, builder, decorator.",
+      "proj.algoritmos": "Prática de algoritmos e estruturas de dados. Ordenações, árvores, percursos em grafos — mantido afiado nos fins de semana.",
+      "proj.status.live": "● ativo",
+      "proj.status.study": "● estudo",
+      "proj.status.archived": "● arquivado",
+      "about.h1": '15 anos.<br>Principalmente Java.<br><span class="green">Ainda curioso.</span>',
+      "about.p1": "Sou Fabio. Escrevo sistemas backend — principalmente em Java, principalmente para bancos, principalmente em produção. O tipo de código que roda a noite toda, gera alerta às 3h e precisa ser depurável pela pessoa de plantão que não sou eu.",
+      "about.p2": "Comecei em 2010 com Java 6 e IBM WebSphere — sim, de verdade. Doze anos depois estava implantando serviços Spring Boot 3 em containers AWS. A stack mudou; o artesanato subjacente não. Leia o stack trace. Confie no compilador. Escreva testes que você gostaria de ler às 2h da manhã.",
+      "about.p3": 'Quando não estou no teclado estou no campo — jogando ou assistindo futebol — ou correndo, ou lendo algo denso, ou discutindo com amigos sobre uma cerveja gelada se <span class="amber">42</span> é realmente uma resposta satisfatória. (É. A questão é o problema.)',
+      "about.timeline.kicker": "linha do tempo",
+      "about.timeline.h2": "Uma carreira, em marcos.",
+      "tl.2010": "Primeira linha Java em produção. A jornada começa.",
+      "tl.2013": "Bacharelado em Ciência da Computação.",
+      "tl.2016": "Pós-graduação — Especialista em Tecnologia Java.",
+      "tl.2018": "Entrei no setor bancário. Escala de produção, ambientes regulados.",
+      "tl.2019": "Certificação EXIN Agile Scrum Foundation.",
+      "tl.2022": "Pós-graduação — Especialista em Data Science &amp; Big Data.",
+      "tl.2023": "AWS Certified Cloud Practitioner.",
+      "tl.2024": "Projetos paralelos entregues: Cartola Odds, plataforma Carlesso Pilates.",
+      "tl.2026": "Disponível para consultoria selecionada · ainda executando o algoritmo.",
+      "about.certs.kicker": "educação · certificações",
+      "about.certs.h2": "Rastro documental.",
+      "about.certs.sub": "// 5 credenciais",
+      "cert.aws.title": "AWS Certified Cloud Practitioner",
+      "cert.aws.desc": "Amazon Web Services",
+      "cert.data.title": "Especialista em Data Science &amp; Big Data",
+      "cert.data.desc": "Pós-graduação",
+      "cert.scrum.title": "EXIN Agile Scrum Foundation",
+      "cert.scrum.desc": "EXIN Internacional",
+      "cert.java.title": "Especialista em Tecnologia Java",
+      "cert.java.desc": "Pós-graduação",
+      "cert.bs.title": "Bacharelado em Ciência da Computação",
+      "cert.bs.desc": "Bacharelado",
+      "cert.easter.title": "A Resposta Definitiva",
+      "cert.easter.desc": "autoconcedido · perpétuo",
+      "work.h1": 'Código público. <span class="muted">Principalmente Java.</span>',
+      "work.intro": "28 repositórios públicos no GitHub. Os abaixo são os projetos aos quais sempre volto — APIs para problemas que realmente me importam. Código aberto, MIT, fork por sua conta e risco.",
+      "work.filter.all": "todos",
+      "work.filter.backend": "backend",
+      "work.filter.frontend": "frontend",
+      "work.filter.live": "ativos",
+      "work.filter.archived": "arquivados",
+      "work.github": "ver tudo no github →",
+      "work.empty": "// 0 resultados — tente outro filtro",
+      "work.cs.kicker": "estudo de caso · cartolaoddsapi",
+      "work.cs.h2": "Construindo um motor de seleção baseado em odds para fantasy football.",
+      "work.cs.stat.lines": "linhas de java",
+      "work.cs.stat.coverage": "cobertura de testes",
+      "work.cs.stat.latency": "latência p50",
+      "work.cs.stat.weekend": "fim de semana, basicamente",
+      "work.cs.problem.h3": "O problema",
+      "work.cs.problem.p": "Todo dev brasileiro quer ganhar no Cartola FC. A maioria escolhe por intuição. Eu queria escolher pela matemática — combinando odds públicas, forma do jogador e contexto do time em um único draft classificado.",
+      "work.cs.approach.h3": "A abordagem",
+      "work.cs.approach.p": "Um serviço Spring Boot com um agendador que busca odds públicas diariamente, normaliza por posição e expõe uma API REST limpa. As heurísticas são plugáveis — as estratégias ficam atrás de uma interface para que eu possa fazer A/B entre rodadas.",
+      "work.cs.learned.h3": "O que aprendi",
+      "work.cs.learned.p": "A parte mais difícil não foi a matemática. Foi a higiene dos dados — jogadores mudam de clube no meio da temporada, provedores de odds mudam formatos, a API quebra toda segunda-feira alternada. Ingestão idempotente mais uma estratégia cuidadosa de retry me salvou.",
+      "work.cs.source": "ver código",
+      "contact.h1": 'Vamos falar<br><span class="green">backend.</span>',
+      "contact.lede": 'Disponível para consultoria selecionada a partir do <span class="green">Q3 2026</span>. Sistemas backend, design de APIs, revisão de código, mentoria para times entregando Java em ambientes regulados.',
+      "contact.response.label": "// TEMPO DE RESPOSTA",
+      "contact.response.time": "&lt; 24h em dias úteis"
+    }
+  };
+
+  function applyLang(lang) {
+    var t = TRANSLATIONS[lang] || TRANSLATIONS.en;
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var key = el.getAttribute("data-i18n");
+      if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+    var toggle = document.getElementById("lang-toggle");
+    if (toggle) toggle.textContent = lang === "en" ? "PT" : "EN";
+    try { localStorage.setItem("fc-lang", lang); } catch (e) {}
+  }
+
+  function initI18n() {
+    var saved;
+    try { saved = localStorage.getItem("fc-lang"); } catch (e) {}
+    var lang = (saved === "pt" || saved === "en") ? saved : "en";
+    applyLang(lang);
+    var toggle = document.getElementById("lang-toggle");
+    if (!toggle) return;
+    toggle.addEventListener("click", function () {
+      var current = document.documentElement.lang || "en";
+      applyLang(current === "en" ? "pt" : "en");
+    });
+  }
+
+  /* —— Mobile nav toggle ————————————————————————————————————————— */
   function initNav() {
     var toggle = document.querySelector(".nav-toggle");
     var nav = document.getElementById("primary-nav");
@@ -44,7 +274,6 @@
     var body = document.querySelector("[data-terminal-body]");
     if (!body) return;
 
-    // Reduced motion / no-JS friendliness: render all lines at once.
     if (reduceMotion) {
       TERMINAL_LINES.forEach(function (l) { renderCompleted(body, l); });
       body.appendChild(promptCursorLine());
@@ -165,6 +394,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    initI18n();
     initNav();
     initTerminal();
     initFilters();
