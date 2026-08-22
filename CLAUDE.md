@@ -21,6 +21,14 @@ Multi-page static site — one `.html` per route (no client-side router, so deep
 - `index.html` (home), `work.html`, `about.html`, `writing.html`, `contact.html`.
   - **`writing.html` is currently hidden** (no real posts yet): its nav link, footer link and the home "recent writing" section are commented out with a `writing: hidden until first post` marker, and the page is `noindex`. The file is kept intact — search that marker and uncomment to re-enable.
 - Each page repeats the same `<head>` (fonts, favicons, Open Graph), sticky `.topbar`, and `.footer` shell — **keep these in sync when editing**.
+- **`in production` block** — a two-card section listing the projects that have a public URL
+  (`FightOssStreak` → `fos.fabiocarlesso.com`, `Carlesso Pilates` → `app.carlessopilates.com.br`).
+  It is duplicated in `index.html` (as `<section class="prod-section">`) and `work.html` (as
+  `<div class="prod-inline">`, since that page already sits inside a `.container`) — **keep the two
+  copies in sync**. The cards are `<article>`, not `<a>`, because each carries several links.
+  Project status vocabulary: **`production` only when there is a public URL**, then `source`
+  (code only), `study`, `archived`. `/work`'s `.filter-count` numbers are hardcoded — update them
+  when adding or removing a card.
 - `css/tokens.css` — design tokens (color/type/spacing/radii). The contract: every value elsewhere must be `var(--fc-*)`, never a raw hex/px.
 - `css/style.css` — all component and page styles + the responsive layer (breakpoints at `1024px` and `720px`).
 - `js/site.js` — terminal typing animation, `/work` filter, mobile nav toggle, and client-side form handling. Every behaviour is guarded by element presence so the one file serves all pages. Honors `prefers-reduced-motion`.
