@@ -9,8 +9,8 @@ Plain HTML, CSS and a single vanilla-JS file — no framework, no build step, no
 
 | Path | Purpose |
 |---|---|
-| `index.html` | Home — hero with animated terminal, tech marquee, featured work, about preview, hire-me CTA |
-| `work.html` | Project gallery with client-side filter + Cartola Odds case study |
+| `index.html` | Home — hero with animated terminal, tech marquee, **in-production** block, featured work, about preview, hire-me CTA |
+| `work.html` | **In-production** block, project gallery with client-side filter + FightOssStreak case study |
 | `about.html` | Long-form bio, career timeline, certifications grid |
 | `writing.html` | Blog index (sample posts) + subscribe block — **currently hidden** (no nav/footer/home links, `noindex`) until the first real post |
 | `contact.html` | Contact methods (email, GitHub, LinkedIn). The terminal-styled form is **disabled** (commented out) until it's wired to a real backend |

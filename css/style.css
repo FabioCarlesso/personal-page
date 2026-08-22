@@ -441,9 +441,68 @@ body::after {
   font-size: 11px;
   color: var(--fc-text-low);
 }
-.proj-status.live    { color: var(--fc-green); }
+.proj-status.production { color: var(--fc-green); }
+.proj-status.source  { color: var(--fc-text-mid); }
 .proj-status.study   { color: var(--fc-amber); }
 .proj-status.archived { color: var(--fc-text-low); }
+
+/* ============================================================
+   IN PRODUCTION — projects with a public URL
+   Two links per card (open app + source), so this is an
+   <article> and not the <a>-based .proj card.
+   ============================================================ */
+.prod-section { padding: 72px 0; border-top: 1px solid var(--fc-ink-4); }
+/* same block inlined inside an existing .container (see work.html) */
+.prod-inline { margin-bottom: 56px; }
+.prod-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.prod-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  background: var(--fc-ink-2);
+  border: 1px solid rgba(63, 185, 80, 0.35);
+  border-radius: var(--fc-r-3);
+  box-shadow: 0 0 0 1px var(--fc-green-glow) inset;
+  transition: border-color 0.2s ease;
+}
+.prod-card:hover { border-color: var(--fc-green); }
+.prod-head { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
+.prod-head .glyph { font-size: 22px; line-height: 1.2; }
+.prod-id { flex: 1; min-width: 0; }
+.prod-name {
+  font-family: var(--fc-font-mono);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--fc-text-hi);
+  margin: 0 0 4px;
+}
+.prod-url {
+  font-family: var(--fc-font-mono);
+  font-size: 12px;
+  color: var(--fc-green);
+  overflow-wrap: anywhere;
+}
+.prod-url:hover { text-decoration: underline; }
+.prod-card .proj-status {
+  font-family: var(--fc-font-mono);
+  font-size: 11px;
+  white-space: nowrap;
+}
+.prod-desc {
+  font-size: 14px;
+  color: var(--fc-text-mid);
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+.prod-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--fc-ink-4);
+}
+.prod-card .proj-tags { margin-top: auto; }
 
 /* ============================================================
    TERMINAL CARD (home hero)
@@ -947,7 +1006,14 @@ body::after {
   .topbar-nav a { padding: 12px 8px; }
   .topbar-cta { display: none; }
   .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  .proj-grid, .post-grid, .work-grid, .certs, .footer-grid, .sub-block { grid-template-columns: 1fr; }
+  .proj-grid, .post-grid, .work-grid, .certs, .footer-grid, .sub-block, .prod-grid { grid-template-columns: 1fr; }
+  .prod-section { padding: 48px 0; }
+  .prod-card { padding: 24px 20px; }
+  /* status badge takes its own line so the name and url keep the full width */
+  .prod-head { flex-wrap: wrap; }
+  .prod-card .proj-status { flex-basis: 100%; order: 3; }
+  .prod-name { font-size: 18px; }
+  .prod-section .section-head, .prod-inline .section-head { flex-direction: column; align-items: flex-start; gap: 8px; }
   .page { padding: 48px 0 80px; }
   .cta-card { padding: 40px 24px; }
   .tl-line { left: 64px; }
