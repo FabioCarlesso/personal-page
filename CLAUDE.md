@@ -28,8 +28,10 @@ Multi-page static site — one `.html` per route (no client-side router, so deep
   `<div class="prod-inline">`, since that page already sits inside a `.container`) — **keep the two
   copies in sync**. The cards are `<article>`, not `<a>`, because each carries several links.
   Project status vocabulary: **`production` only when there is a public URL**, then `source`
-  (code only), `study`, `archived`. `/work`'s `.filter-count` numbers are hardcoded — update them
-  when adding or removing a card.
+  (code only), `study`, `archived`. The section subtitle deliberately carries **no product count**
+  (it drifted twice), so adding a product means adding the card in both pages — nothing else in
+  that block. `/work`'s `.filter-count` numbers, however, are hardcoded — update them when adding
+  or removing a card.
 - `css/tokens.css` — design tokens (color/type/spacing/radii). The contract: every value elsewhere must be `var(--fc-*)`, never a raw hex/px.
 - `css/style.css` — all component and page styles + the responsive layer (breakpoints at `1024px` and `720px`).
 - `js/site.js` — terminal typing animation, `/work` filter, mobile nav toggle, and client-side form handling. Every behaviour is guarded by element presence so the one file serves all pages. Honors `prefers-reduced-motion`.
