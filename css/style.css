@@ -1023,5 +1023,9 @@ body::after {
   .tl-year { font-size: 18px; }
   .writing-row { grid-template-columns: 1fr; gap: 12px; }
   .form-body, .cta-card { padding: 24px; }
+  /* subscribe block: the input's default width made the card wider than the screen */
+  .sub-block { padding: 24px; }
+  .sub-form { flex-wrap: wrap; }
+  .sub-form input { min-width: 0; flex: 1 1 100%; }
 }
 
