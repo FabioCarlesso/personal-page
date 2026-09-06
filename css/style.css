@@ -454,7 +454,7 @@ body::after {
 .prod-section { padding: 72px 0; border-top: 1px solid var(--fc-ink-4); }
 /* same block inlined inside an existing .container (see work.html) */
 .prod-inline { margin-bottom: 56px; }
-.prod-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.prod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .prod-card {
   display: flex;
   flex-direction: column;
@@ -466,7 +466,7 @@ body::after {
   transition: border-color 0.2s ease;
 }
 .prod-card:hover { border-color: var(--fc-green); }
-.prod-head { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
+.prod-head { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
 .prod-head .glyph { font-size: 22px; line-height: 1.2; }
 .prod-id { flex: 1; min-width: 0; }
 .prod-name {
@@ -486,7 +486,8 @@ body::after {
 .prod-card .proj-status {
   font-family: var(--fc-font-mono);
   font-size: 11px;
-  white-space: nowrap;
+  flex-basis: 100%;
+  order: 3;
 }
 .prod-desc {
   font-size: 14px;
@@ -617,6 +618,8 @@ body::after {
 }
 
 .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+/* two-card variant — avoids an empty third column */
+.proj-grid--duo { grid-template-columns: repeat(2, 1fr); }
 
 .about-preview {
   padding: 80px 0;
@@ -971,7 +974,7 @@ body::after {
   .cs-grid { grid-template-columns: 1fr; gap: 32px; }
   .cs-stat-col { flex-direction: row; flex-wrap: wrap; gap: 32px; padding-right: 0; border-right: none; padding-bottom: 24px; border-bottom: 1px solid var(--fc-ink-4); }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-  .proj-grid, .post-grid, .work-grid, .certs { grid-template-columns: repeat(2, 1fr); }
+  .proj-grid, .post-grid, .work-grid, .certs, .prod-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 720px) {
@@ -1009,11 +1012,10 @@ body::after {
   .proj-grid, .post-grid, .work-grid, .certs, .footer-grid, .sub-block, .prod-grid { grid-template-columns: 1fr; }
   .prod-section { padding: 48px 0; }
   .prod-card { padding: 24px 20px; }
-  /* status badge takes its own line so the name and url keep the full width */
-  .prod-head { flex-wrap: wrap; }
-  .prod-card .proj-status { flex-basis: 100%; order: 3; }
   .prod-name { font-size: 18px; }
-  .prod-section .section-head, .prod-inline .section-head { flex-direction: column; align-items: flex-start; gap: 8px; }
+  /* section heads stack: h2 beside its sub/button row overflows a phone */
+  .section-head { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .section-head .row { flex-wrap: wrap; }
   .page { padding: 48px 0 80px; }
   .cta-card { padding: 40px 24px; }
   .tl-line { left: 64px; }
@@ -1021,5 +1023,9 @@ body::after {
   .tl-year { font-size: 18px; }
   .writing-row { grid-template-columns: 1fr; gap: 12px; }
   .form-body, .cta-card { padding: 24px; }
+  /* subscribe block: the input's default width made the card wider than the screen */
+  .sub-block { padding: 24px; }
+  .sub-form { flex-wrap: wrap; }
+  .sub-form input { min-width: 0; flex: 1 1 100%; }
 }
 
