@@ -1013,7 +1013,9 @@ body::after {
   .prod-section { padding: 48px 0; }
   .prod-card { padding: 24px 20px; }
   .prod-name { font-size: 18px; }
-  .prod-section .section-head, .prod-inline .section-head { flex-direction: column; align-items: flex-start; gap: 8px; }
+  /* section heads stack: h2 beside its sub/button row overflows a phone */
+  .section-head { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .section-head .row { flex-wrap: wrap; }
   .page { padding: 48px 0 80px; }
   .cta-card { padding: 40px 24px; }
   .tl-line { left: 64px; }
