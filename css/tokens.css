@@ -17,9 +17,9 @@
   --fc-bone:       #fafaf7;   /* near-white para máximo contraste */
 
   /* —— Accents ——————————————————————————————————— */
-  --fc-green:      #3fb950;   /* terminal green — accent primário */
-  --fc-green-soft: #2ea043;
-  --fc-green-glow: rgba(63, 185, 80, 0.18);
+  --fc-blue:       #58a6ff;   /* signal blue — accent primário */
+  --fc-blue-soft:  #388bfd;
+  --fc-blue-glow:  rgba(88, 166, 255, 0.18);
 
   --fc-amber:      #e3b341;   /* 42 / easter eggs / highlights */
   --fc-amber-soft: #d29922;

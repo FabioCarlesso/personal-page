@@ -31,7 +31,7 @@
       "footer.contact.label": "Contact",
       "footer.copyright": "© 2026 Fabio Nami Carlesso · all rights reserved",
       "home.kicker": "Backend Software Engineer · Foz do Iguaçu, BR",
-      "home.hero.h1": 'Building APIs<br>that <span class="green">hold up</span><br>in production.',
+      "home.hero.h1": 'Building APIs<br>that <span class="blue">hold up</span><br>in production.',
       "home.hero.lede": "Java &amp; Spring Boot since 2010. AWS-certified. Banking-sector pragmatic.<br>I design readable APIs, break problems into testable pieces, and keep the cluster green.",
       "home.hero.cta.primary": "View case studies",
       "home.hero.stat.years": "years in prod",
@@ -46,7 +46,7 @@
       "home.about.lede": "Developer working in the banking sector, with 15+ years of experience building and monitoring software using Java, Spring Boot, Python and agile practices.",
       "home.about.sub": 'Off-keyboard I play and watch soccer, watch movies and series, read books, listen to music, and occasionally philosophize about the meaning of life, the universe, and everything <span class="amber">(42)</span> over a cold beer.',
       "home.about.link": "full story →",
-      "home.cta.h2": 'Got an API that<br><span class="green">won\'t hold up?</span>',
+      "home.cta.h2": 'Got an API that<br><span class="blue">won\'t hold up?</span>',
       "home.cta.lede": "Open for select consulting from Q3 2026. Backend systems, code review, mentoring teams shipping Java in regulated environments.",
       "prod.kicker": "in production · public urls",
       "prod.h2": "Running in production.",
@@ -68,7 +68,7 @@
       "proj.status.source": "● source",
       "proj.status.study": "● study",
       "proj.status.archived": "● archived",
-      "about.h1": '15 years.<br>Mostly Java.<br><span class="green">Still curious.</span>',
+      "about.h1": '15 years.<br>Mostly Java.<br><span class="blue">Still curious.</span>',
       "about.p1": "I'm Fabio. I write backend systems — mostly in Java, mostly for banks, mostly in production. The kind of code that runs all night, gets paged at 3am, and has to be debuggable by the person on call who isn't me.",
       "about.p2": "I started in 2010 with Java 6 and IBM WebSphere — yes, really. Twelve years later I was deploying Spring Boot 3 services to AWS containers. The stack changed; the underlying craft didn't. Read the stack trace. Trust the compiler. Write tests you'd want to read at 2am.",
       "about.p3": 'When I\'m not on the keyboard I\'m at the field — playing or watching soccer — or running, or reading something dense, or arguing with friends over a cold beer about whether <span class="amber">42</span> is actually a satisfying answer. (It is. The question is the problem.)',
@@ -121,8 +121,8 @@
       "work.cs.learned.p": "The bottleneck was never the code — it was curating content. Writing 91 questions that actually test a concept took longer than the API around them. And a cold-starting backend taught me to build a landing page that renders in full without a single API call.",
       "work.cs.open": "open app",
       "work.cs.source": "view source",
-      "contact.h1": 'Let\'s talk<br><span class="green">backend.</span>',
-      "contact.lede": 'Open for select consulting from <span class="green">Q3 2026</span>. Backend systems, API design, code review, mentoring teams shipping Java in regulated environments.',
+      "contact.h1": 'Let\'s talk<br><span class="blue">backend.</span>',
+      "contact.lede": 'Open for select consulting from <span class="blue">Q3 2026</span>. Backend systems, API design, code review, mentoring teams shipping Java in regulated environments.',
       "contact.response.label": "// AVERAGE RESPONSE",
       "contact.response.time": "&lt; 24h on weekdays"
     },
@@ -142,7 +142,7 @@
       "footer.contact.label": "Contato",
       "footer.copyright": "© 2026 Fabio Nami Carlesso · todos os direitos reservados",
       "home.kicker": "Engenheiro de Software Backend · Foz do Iguaçu, BR",
-      "home.hero.h1": 'Construindo APIs<br>que <span class="green">aguentam</span><br>em produção.',
+      "home.hero.h1": 'Construindo APIs<br>que <span class="blue">aguentam</span><br>em produção.',
       "home.hero.lede": "Java &amp; Spring Boot desde 2010. Certificado AWS. Pragmático do setor bancário.<br>Projeto APIs legíveis, divido problemas em partes testáveis e mantenho o cluster verde.",
       "home.hero.cta.primary": "Ver estudos de caso",
       "home.hero.stat.years": "anos em prod",
@@ -157,7 +157,7 @@
       "home.about.lede": "Desenvolvedor no setor bancário, com 15+ anos de experiência construindo e monitorando software com Java, Spring Boot, Python e práticas ágeis.",
       "home.about.sub": 'Fora do teclado jogo e assisto futebol, filmes e séries, leio livros, ouço música e eventualmente filosofo sobre o significado da vida, o universo e tudo mais <span class="amber">(42)</span> com uma cerveja gelada.',
       "home.about.link": "história completa →",
-      "home.cta.h2": 'Tem uma API que<br><span class="green">não aguenta?</span>',
+      "home.cta.h2": 'Tem uma API que<br><span class="blue">não aguenta?</span>',
       "home.cta.lede": "Disponível para consultoria selecionada a partir do Q3 2026. Sistemas backend, revisão de código, mentoria para times entregando Java em ambientes regulados.",
       "prod.kicker": "em produção · urls públicas",
       "prod.h2": "Rodando em produção.",
@@ -179,7 +179,7 @@
       "proj.status.source": "● código",
       "proj.status.study": "● estudo",
       "proj.status.archived": "● arquivado",
-      "about.h1": '15 anos.<br>Principalmente Java.<br><span class="green">Ainda curioso.</span>',
+      "about.h1": '15 anos.<br>Principalmente Java.<br><span class="blue">Ainda curioso.</span>',
       "about.p1": "Sou Fabio. Escrevo sistemas backend — principalmente em Java, principalmente para bancos, principalmente em produção. O tipo de código que roda a noite toda, gera alerta às 3h e precisa ser depurável pela pessoa de plantão que não sou eu.",
       "about.p2": "Comecei em 2010 com Java 6 e IBM WebSphere — sim, de verdade. Doze anos depois estava implantando serviços Spring Boot 3 em containers AWS. A stack mudou; o artesanato subjacente não. Leia o stack trace. Confie no compilador. Escreva testes que você gostaria de ler às 2h da manhã.",
       "about.p3": 'Quando não estou no teclado estou no campo — jogando ou assistindo futebol — ou correndo, ou lendo algo denso, ou discutindo com amigos sobre uma cerveja gelada se <span class="amber">42</span> é realmente uma resposta satisfatória. (É. A questão é o problema.)',
@@ -232,8 +232,8 @@
       "work.cs.learned.p": "O gargalo nunca foi o código — foi curar conteúdo. Escrever 91 perguntas que de fato testam um conceito levou mais tempo que a API ao redor delas. E o cold start do backend me ensinou a fazer uma landing que renderiza inteira sem uma única chamada de API.",
       "work.cs.open": "abrir app",
       "work.cs.source": "ver código",
-      "contact.h1": 'Vamos falar<br><span class="green">backend.</span>',
-      "contact.lede": 'Disponível para consultoria selecionada a partir do <span class="green">Q3 2026</span>. Sistemas backend, design de APIs, revisão de código, mentoria para times entregando Java em ambientes regulados.',
+      "contact.h1": 'Vamos falar<br><span class="blue">backend.</span>',
+      "contact.lede": 'Disponível para consultoria selecionada a partir do <span class="blue">Q3 2026</span>. Sistemas backend, design de APIs, revisão de código, mentoria para times entregando Java em ambientes regulados.',
       "contact.response.label": "// TEMPO DE RESPOSTA",
       "contact.response.time": "&lt; 24h em dias úteis"
     }
@@ -410,7 +410,7 @@
       // TODO(deploy): wire to a newsletter provider (Buttondown, etc).
       var input = form.querySelector("input");
       form.innerHTML =
-        '<span class="mono green">// subscribed — confirm via the email I just sent.</span>';
+        '<span class="mono blue">// subscribed — confirm via the email I just sent.</span>';
       if (input && input.value) { /* value captured before reset */ }
     });
   }

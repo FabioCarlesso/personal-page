@@ -84,7 +84,7 @@ EOF
 
 ## Conventions & easter eggs
 
-- The `(fc)` brand mark always renders its parens in `--fc-green`.
+- The `(fc)` brand mark always renders its parens in `--fc-blue`.
 - Intentional easter eggs (not typos): `42` / `[42]` (amber), the "Run, Fabio! Run!" footer glyph, terminal cursors, and `echo $ANSWER → 42`.
 - The subscribe form (writing) is a client-side stub — search `TODO(deploy)` in `js/site.js` for where to wire a real endpoint.
 - **The contact form is currently disabled**: it never sent email (client-side stub) and was misleading, so the terminal form on `contact.html` is commented out behind a `contact form: disabled until backend wired` marker and the grid uses the `contact-grid--solo` single-column variant. `contact.html` now offers email, GitHub and LinkedIn only. The `#contact-form` markup and its guarded `initContactForm` handler are kept intact — uncomment the block and drop `contact-grid--solo` after wiring a real endpoint.
