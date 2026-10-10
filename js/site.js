@@ -392,7 +392,7 @@
     }
   };
 
-  function applyLang(lang) {
+  function applyLang(lang, persist) {
     var t = TRANSLATIONS[lang] || TRANSLATIONS.en;
     document.documentElement.lang = lang;
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
@@ -401,12 +401,12 @@
     });
     var toggle = document.getElementById("lang-toggle");
     if (toggle) toggle.textContent = lang === "en" ? "PT" : "EN";
-    try { localStorage.setItem("fc-lang", lang); } catch (e) {}
+    if (persist) { try { localStorage.setItem("fc-lang", lang); } catch (e) {} }
   }
 
   function initI18n() {
-    // ?lang=pt|en wins over the saved choice — shareable links, and how
-    // scripts/build-press-kit.sh prints the PT press-kit PDF.
+    // ?lang=pt|en wins over the saved choice for this view only (not saved) —
+    // shareable links, and how scripts/build-press-kit.sh prints the PT PDF.
     var saved, param = (location.search.match(/[?&]lang=(pt|en)\b/) || [])[1];
     try { saved = localStorage.getItem("fc-lang"); } catch (e) {}
     var lang = param || ((saved === "pt" || saved === "en") ? saved : "en");
@@ -415,7 +415,7 @@
     if (!toggle) return;
     toggle.addEventListener("click", function () {
       var current = document.documentElement.lang || "en";
-      applyLang(current === "en" ? "pt" : "en");
+      applyLang(current === "en" ? "pt" : "en", true);
     });
   }
 
@@ -575,14 +575,27 @@
     document.querySelectorAll("[data-copy]").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var src = document.getElementById(btn.getAttribute("data-copy"));
-        if (!src || !navigator.clipboard) return;
+        if (!src) return;
         var text = Array.prototype.map.call(src.querySelectorAll("p"), function (p) {
           return p.textContent.replace(/\s+/g, " ").trim();
         }).join("\n\n");
-        navigator.clipboard.writeText(text).then(function () {
-          btn.classList.add("is-copied");
-          setTimeout(function () { btn.classList.remove("is-copied"); }, 1600);
-        });
+        function flash(cls) {
+          btn.classList.remove("is-copied", "is-failed");
+          btn.classList.add(cls);
+          setTimeout(function () { btn.classList.remove(cls); }, cls === "is-failed" ? 4000 : 1600);
+        }
+        // No clipboard (denied, or not a secure context): select the bio so
+        // Ctrl+C still works, and say so on the button.
+        function fallback() {
+          var range = document.createRange();
+          range.selectNodeContents(src);
+          var sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+          flash("is-failed");
+        }
+        if (!navigator.clipboard) return fallback();
+        navigator.clipboard.writeText(text).then(function () { flash("is-copied"); }, fallback);
       });
     });
   }

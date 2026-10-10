@@ -12,7 +12,7 @@ Open any `.html` file directly in a browser to preview. There is no local dev se
 
 ## Deployment
 
-Deployment is fully automated via GitHub Actions (`.github/workflows/main.yml`): every push to `main` triggers an FTP sync of all files to `public_html/` on the hosting server. There is no build — what's committed is what ships. The FTP credentials are stored as GitHub secrets (`ftp_host_personal_page`, `ftp_user_personal_page`, `ftp_password_personal_page`). The `handoff/` design bundle is git-ignored and never deployed.
+Deployment is fully automated via GitHub Actions (`.github/workflows/main.yml`): every push to `main` triggers an FTP sync of all files to `public_html/` on the hosting server. There is no build — what's committed is what ships. The FTP credentials are stored as GitHub secrets (`ftp_host_personal_page`, `ftp_user_personal_page`, `ftp_password_personal_page`). The `handoff/` design bundle is git-ignored and never deployed; `scripts/` is committed but excluded from the FTP sync (`exclude:` in the workflow — that list replaces the action's defaults, so keep them in it).
 
 ## Architecture
 
@@ -20,7 +20,7 @@ Multi-page static site — one `.html` per route (no client-side router, so deep
 
 - `index.html` (home), `work.html`, `about.html`, `writing.html`, `contact.html`.
   - **`writing.html` is currently hidden** (no real posts yet): its nav link, footer link and the home "recent writing" section are commented out with a `writing: hidden until first post` marker, and the page is `noindex`. The file is kept intact — search that marker and uncomment to re-enable.
-- Each page repeats the same `<head>` (fonts, favicons, Open Graph), sticky `.topbar`, and `.footer` shell — **keep these in sync when editing**.
+- Each page repeats the same `<head>` (fonts, favicons, Open Graph, `darkreader-lock` so the Dark Reader extension doesn't repaint the already-dark brand), sticky `.topbar`, and `.footer` shell — **keep these in sync when editing**.
 - **`in production` block** — a three-card section listing the projects that have a public URL
   (`FightOssStreak` → `fos.fabiocarlesso.com`, `Carlesso Pilates` → `app.carlessopilates.com.br`,
   `Cartola Odds` → `cartola.fabiocarlesso.com`).
@@ -39,7 +39,7 @@ Multi-page static site — one `.html` per route (no client-side router, so deep
   `google-chrome`, `python3`, `zip`, network for Google Fonts) and commit the regenerated `press/` files —
   otherwise the zip and PDFs drift from the page. The PDFs are `press.html` printed through the `@media print`
   layer at the end of `css/style.css`; the PT one comes from `press.html?lang=pt` (`?lang=pt|en` overrides the
-  saved language on every page).
+  saved language on every page, for that view only — it is not saved).
 - `css/tokens.css` — design tokens (color/type/spacing/radii). The contract: every value elsewhere must be `var(--fc-*)`, never a raw hex/px.
 - `css/style.css` — all component and page styles + the responsive layer (breakpoints at `1024px` and `720px`).
 - `js/site.js` — terminal typing animation, `/work` filter, mobile nav toggle, and client-side form handling. Every behaviour is guarded by element presence so the one file serves all pages. Honors `prefers-reduced-motion`.
