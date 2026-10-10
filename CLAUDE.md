@@ -32,10 +32,21 @@ Multi-page static site — one `.html` per route (no client-side router, so deep
   (it drifted twice), so adding a product means adding the card in both pages — nothing else in
   that block. `/work`'s `.filter-count` numbers, however, are hardcoded — update them when adding
   or removing a card.
+- **`press.html` — press kit** (for recruiters, events and podcasts): spec sheet, bios in three lengths,
+  headshot, talk topics, logos + usage rules, palette and type. Linked from the footer only (not the nav).
+  Its downloads live in `press/` and are **generated, not hand-edited**: after changing `press.html`, the
+  `press.bio.*` strings in `js/site.js` or any logo in `assets/`, run `scripts/build-press-kit.sh` (needs
+  `google-chrome`, `python3`, `zip`, network for Google Fonts) and commit the regenerated `press/` files —
+  otherwise the zip and PDFs drift from the page. The PDFs are `press.html` printed through the `@media print`
+  layer at the end of `css/style.css`; the PT one comes from `press.html?lang=pt` (`?lang=pt|en` overrides the
+  saved language on every page).
 - `css/tokens.css` — design tokens (color/type/spacing/radii). The contract: every value elsewhere must be `var(--fc-*)`, never a raw hex/px.
 - `css/style.css` — all component and page styles + the responsive layer (breakpoints at `1024px` and `720px`).
 - `js/site.js` — terminal typing animation, `/work` filter, mobile nav toggle, and client-side form handling. Every behaviour is guarded by element presence so the one file serves all pages. Honors `prefers-reduced-motion`.
 - `assets/` — brand assets (logos, favicons, OG image). `images/` retains the original profile photo.
+  The logo and favicon SVGs are **outlined** (text converted to JetBrains Mono paths, explicit fills), so they
+  render the same outside the site. Don't reintroduce `<text>` in them — the `handoff/` originals relied on
+  stripped CSS classes and rendered in a system serif.
 
 ## i18n contract & check
 

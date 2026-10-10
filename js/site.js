@@ -406,7 +406,7 @@
 
   function initI18n() {
     // ?lang=pt|en wins over the saved choice — shareable links, and how
-    // scripts/build-press-kit.sh prints the PT one-pager.
+    // scripts/build-press-kit.sh prints the PT press-kit PDF.
     var saved, param = (location.search.match(/[?&]lang=(pt|en)\b/) || [])[1];
     try { saved = localStorage.getItem("fc-lang"); } catch (e) {}
     var lang = param || ((saved === "pt" || saved === "en") ? saved : "en");
