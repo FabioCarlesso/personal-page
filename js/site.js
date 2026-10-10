@@ -5,6 +5,7 @@
    - /work filter bar
    - contact + subscribe form handling (client-side only)
    - pt/en i18n
+   - press kit: copy-bio buttons
    All guarded by element presence so one file serves every page.
    ============================================================ */
 (function () {
@@ -124,7 +125,83 @@
       "contact.h1": 'Let\'s talk<br><span class="blue">backend.</span>',
       "contact.lede": 'Open for select consulting from <span class="blue">Q3 2026</span>. Backend systems, API design, code review, mentoring teams shipping Java in regulated environments.',
       "contact.response.label": "// AVERAGE RESPONSE",
-      "contact.response.time": "&lt; 24h on weekdays"
+      "contact.response.time": "&lt; 24h on weekdays",
+      "footer.nav.press": "Press kit",
+      "press.h1": 'Press kit.<br><span class="blue">Copy, paste, ship.</span>',
+      "press.lede": "Bios, headshot, talk topics and logos — for recruiters, event organisers and podcast hosts. Use anything on this page as is; no need to ask first.",
+      "press.dl.zip": "download kit (.zip)",
+      "press.spec.kicker": "at a glance",
+      "press.spec.h2": "The spec sheet.",
+      "press.spec.sub": "// for recruiters &amp; hiring teams",
+      "press.spec.role": "Senior backend software engineer",
+      "press.spec.experience": "15+ years · Java in production since 2010",
+      "press.spec.sector": "Banking · regulated environments",
+      "press.spec.education": "B.S. Computer Science · postgraduate in Java Technology and in Data Science &amp; Big Data",
+      "press.spec.languages": "pt-BR (native) · en (fluent)",
+      "press.spec.open": "Full-time roles · select consulting",
+      "press.bio.h2": "Introduce me in three lengths.",
+      "press.bio.sub": "// follows the EN/PT toggle",
+      "press.copy": "copy",
+      "press.bio.one.label": "one-liner",
+      "press.bio.one": "Fabio Carlesso is a senior backend engineer who has been shipping Java to production since 2010, mostly for the banking sector.",
+      "press.bio.short.label": "short · ~60 words",
+      "press.bio.short": "Fabio Carlesso is a senior backend engineer based in Foz do Iguaçu, Brazil. Since 2010, Fabio has built and run Java systems in production — most of them in banking, where code has to be correct, auditable and debuggable at 3am. Day to day that means Spring Boot, AWS, Postgres and Docker. AWS Certified Cloud Practitioner.",
+      "press.bio.long.label": "long · ~150 words",
+      "press.bio.long.p1": "Fabio Carlesso is a senior backend software engineer with more than fifteen years of Java in production. The career started in 2010 on Java 6 and IBM WebSphere and runs through to Spring Boot 3 services in AWS containers. Since 2018 it has been in the banking sector, where systems run all night, sit under regulation and have to be debuggable by whoever is on call.",
+      "press.bio.long.p2": "Fabio holds a B.S. in Computer Science, postgraduate specialisations in Java Technology and in Data Science &amp; Big Data, and the AWS Certified Cloud Practitioner and EXIN Agile Scrum Foundation certifications. Outside the day job, Fabio designs, builds and runs independent products — FightOssStreak, Cartola Odds and the Carlesso Pilates platform — all live in production, all with public source code.",
+      "press.bio.long.p3": "Based in Foz do Iguaçu, Brazil (GMT-3). Works in Portuguese and English.",
+      "press.photo.kicker": "headshot",
+      "press.photo.dl": "↓ download",
+      "press.photo.note": "Crop freely. Please don't filter, recolour or distort.",
+      "press.talks.kicker": "speaking · podcasts",
+      "press.talks.h2": "What I talk about.",
+      "press.talks.t1.h": "Java in regulated environments",
+      "press.talks.t1.p": "Fifteen years of shipping to production in banking: auditability, change control, and moving fast without breaking compliance.",
+      "press.talks.t2.h": "From WebSphere to Spring Boot 3",
+      "press.talks.t2.p": "What changed between Java 6 on an app server and containers on AWS — and the craft that didn't.",
+      "press.talks.t3.h": "Code the on-call engineer can debug",
+      "press.talks.t3.p": "Readable stack traces, honest logs and tests you'd want to read at 2am.",
+      "press.talks.t4.h": "Side projects, in production",
+      "press.talks.t4.p": "Building, hosting and keeping small products alive as a team of one — FightOssStreak, Cartola Odds and Carlesso Pilates.",
+      "press.talks.formats.label": "formats",
+      "press.talks.formats": "talks · panels · podcasts · workshops",
+      "press.talks.langs.label": "languages",
+      "press.talks.where.label": "where",
+      "press.talks.where": "remote, or in person from Foz do Iguaçu (GMT-3)",
+      "press.logos.kicker": "brand assets",
+      "press.logos.h2": "Logos.",
+      "press.logos.sub": "// outlined svg, no fonts needed · png in the zip",
+      "press.logo.fc": "primary · dark surfaces",
+      "press.logo.light": "primary · light surfaces",
+      "press.logo.accent": "on the accent colour",
+      "press.logo.stacked": "lockup · square spaces",
+      "press.logo.wordmark": "wordmark · banners, slides",
+      "press.logo.white": "one colour · dark",
+      "press.logo.ink": "one colour · light",
+      "press.logo.42": "easter egg · never primary",
+      "press.usage.do": "do",
+      "press.usage.do1": "Keep the parens of (fc) in signal blue on every colour variant.",
+      "press.usage.do2": "Use the dark mark on dark surfaces and the light mark on paper.",
+      "press.usage.do3": "Leave clear space around the mark of at least one paren's width.",
+      "press.usage.dont": "don't",
+      "press.usage.dont1": "Recolour, stretch, rotate or add effects to the mark.",
+      "press.usage.dont2": "Retype (fc) in another typeface — use the files.",
+      "press.usage.dont3": "Use [42] as the main logo. It's the easter egg.",
+      "press.colors.kicker": "colour · type",
+      "press.colors.h2": "Palette &amp; typography.",
+      "press.color.ink": "background",
+      "press.color.ink2": "cards, panels",
+      "press.color.blue": "accent · the parens",
+      "press.color.amber": "42 · highlights",
+      "press.color.rust": "rare warm accent",
+      "press.color.paper": "light surfaces",
+      "press.color.bone": "text on dark",
+      "press.type.mono": "display · headings · code",
+      "press.type.sans": "body text",
+      "press.type.serif": "accents in prose",
+      "press.contact.kicker": "booking · interviews",
+      "press.contact.h2": "Get in touch.",
+      "press.contact.sub": "// email is fastest · &lt; 24h on weekdays"
     },
     pt: {
       "topbar.status": "disponível · q3 '26",
@@ -235,7 +312,83 @@
       "contact.h1": 'Vamos falar<br><span class="blue">backend.</span>',
       "contact.lede": 'Disponível para consultoria selecionada a partir do <span class="blue">Q3 2026</span>. Sistemas backend, design de APIs, revisão de código, mentoria para times entregando Java em ambientes regulados.',
       "contact.response.label": "// TEMPO DE RESPOSTA",
-      "contact.response.time": "&lt; 24h em dias úteis"
+      "contact.response.time": "&lt; 24h em dias úteis",
+      "footer.nav.press": "Mídia kit",
+      "press.h1": 'Mídia kit.<br><span class="blue">Copie, cole, publique.</span>',
+      "press.lede": "Bios, foto, temas de palestra e logos — para recrutadores, organizadores de eventos e podcasts. Use o que estiver nesta página como está; não precisa pedir.",
+      "press.dl.zip": "baixar kit (.zip)",
+      "press.spec.kicker": "resumo",
+      "press.spec.h2": "A ficha técnica.",
+      "press.spec.sub": "// para recrutadores &amp; times de contratação",
+      "press.spec.role": "Engenheiro de software backend sênior",
+      "press.spec.experience": "15+ anos · Java em produção desde 2010",
+      "press.spec.sector": "Setor bancário · ambientes regulados",
+      "press.spec.education": "Bacharel em Ciência da Computação · pós-graduação em Tecnologia Java e em Data Science &amp; Big Data",
+      "press.spec.languages": "pt-BR (nativo) · en (fluente)",
+      "press.spec.open": "Posições full-time · consultoria selecionada",
+      "press.bio.h2": "Me apresente em três tamanhos.",
+      "press.bio.sub": "// acompanha o botão EN/PT",
+      "press.copy": "copiar",
+      "press.bio.one.label": "uma linha",
+      "press.bio.one": "Fabio Carlesso é engenheiro backend sênior e coloca Java em produção desde 2010, principalmente no setor bancário.",
+      "press.bio.short.label": "curta · ~60 palavras",
+      "press.bio.short": "Fabio Carlesso é engenheiro backend sênior, baseado em Foz do Iguaçu. Desde 2010 constrói e mantém sistemas Java em produção — a maioria no setor bancário, onde o código precisa ser correto, auditável e depurável às 3h da manhã. No dia a dia, isso significa Spring Boot, AWS, Postgres e Docker. Certificado AWS Cloud Practitioner.",
+      "press.bio.long.label": "longa · ~150 palavras",
+      "press.bio.long.p1": "Fabio Carlesso é engenheiro de software backend sênior, com mais de quinze anos de Java em produção. A carreira começou em 2010, com Java 6 e IBM WebSphere, e chegou a serviços Spring Boot 3 em containers na AWS. Desde 2018 atua no setor bancário, onde os sistemas rodam a noite toda, estão sob regulação e precisam ser depuráveis por quem estiver de plantão.",
+      "press.bio.long.p2": "É bacharel em Ciência da Computação, especialista em Tecnologia Java e em Data Science &amp; Big Data, com as certificações AWS Certified Cloud Practitioner e EXIN Agile Scrum Foundation. Fora do trabalho, projeta, constrói e mantém produtos independentes — FightOssStreak, Cartola Odds e a plataforma Carlesso Pilates — todos em produção, todos com código público.",
+      "press.bio.long.p3": "Baseado em Foz do Iguaçu (GMT-3). Trabalha em português e inglês.",
+      "press.photo.kicker": "foto",
+      "press.photo.dl": "↓ baixar",
+      "press.photo.note": "Pode recortar à vontade. Só não aplique filtros, não altere as cores nem distorça.",
+      "press.talks.kicker": "palestras · podcasts",
+      "press.talks.h2": "Sobre o que eu falo.",
+      "press.talks.t1.h": "Java em ambientes regulados",
+      "press.talks.t1.p": "Quinze anos colocando código em produção no setor bancário: auditabilidade, controle de mudanças e velocidade sem quebrar compliance.",
+      "press.talks.t2.h": "Do WebSphere ao Spring Boot 3",
+      "press.talks.t2.p": "O que mudou entre Java 6 num servidor de aplicação e containers na AWS — e o ofício que não mudou.",
+      "press.talks.t3.h": "Código que o plantonista consegue depurar",
+      "press.talks.t3.p": "Stack traces legíveis, logs honestos e testes que você gostaria de ler às 2h da manhã.",
+      "press.talks.t4.h": "Projetos paralelos, em produção",
+      "press.talks.t4.p": "Construir, hospedar e manter produtos pequenos vivos como um time de uma pessoa só — FightOssStreak, Cartola Odds e Carlesso Pilates.",
+      "press.talks.formats.label": "formatos",
+      "press.talks.formats": "palestras · painéis · podcasts · workshops",
+      "press.talks.langs.label": "idiomas",
+      "press.talks.where.label": "onde",
+      "press.talks.where": "remoto, ou presencial a partir de Foz do Iguaçu (GMT-3)",
+      "press.logos.kicker": "ativos da marca",
+      "press.logos.h2": "Logos.",
+      "press.logos.sub": "// svg em curvas, sem depender de fonte · png no zip",
+      "press.logo.fc": "principal · fundos escuros",
+      "press.logo.light": "principal · fundos claros",
+      "press.logo.accent": "sobre a cor de destaque",
+      "press.logo.stacked": "assinatura · espaços quadrados",
+      "press.logo.wordmark": "wordmark · banners, slides",
+      "press.logo.white": "uma cor · escuro",
+      "press.logo.ink": "uma cor · claro",
+      "press.logo.42": "easter egg · nunca principal",
+      "press.usage.do": "faça",
+      "press.usage.do1": "Mantenha os parênteses de (fc) em azul em todas as variações coloridas.",
+      "press.usage.do2": "Use a marca escura em fundos escuros e a clara em fundos claros.",
+      "press.usage.do3": "Deixe ao redor da marca um respiro de pelo menos a largura de um parêntese.",
+      "press.usage.dont": "não faça",
+      "press.usage.dont1": "Mudar as cores, esticar, girar ou aplicar efeitos na marca.",
+      "press.usage.dont2": "Redigitar (fc) em outra fonte — use os arquivos.",
+      "press.usage.dont3": "Usar o [42] como logo principal. Ele é o easter egg.",
+      "press.colors.kicker": "cor · tipografia",
+      "press.colors.h2": "Paleta &amp; tipografia.",
+      "press.color.ink": "fundo",
+      "press.color.ink2": "cards, painéis",
+      "press.color.blue": "destaque · os parênteses",
+      "press.color.amber": "42 · realces",
+      "press.color.rust": "destaque quente, raro",
+      "press.color.paper": "fundos claros",
+      "press.color.bone": "texto no escuro",
+      "press.type.mono": "títulos · display · código",
+      "press.type.sans": "texto corrido",
+      "press.type.serif": "ênfases no texto",
+      "press.contact.kicker": "agenda · entrevistas",
+      "press.contact.h2": "Fale comigo.",
+      "press.contact.sub": "// e-mail é o mais rápido · &lt; 24h em dias úteis"
     }
   };
 
@@ -252,9 +405,11 @@
   }
 
   function initI18n() {
-    var saved;
+    // ?lang=pt|en wins over the saved choice — shareable links, and how
+    // scripts/build-press-kit.sh prints the PT one-pager.
+    var saved, param = (location.search.match(/[?&]lang=(pt|en)\b/) || [])[1];
     try { saved = localStorage.getItem("fc-lang"); } catch (e) {}
-    var lang = (saved === "pt" || saved === "en") ? saved : "en";
+    var lang = param || ((saved === "pt" || saved === "en") ? saved : "en");
     applyLang(lang);
     var toggle = document.getElementById("lang-toggle");
     if (!toggle) return;
@@ -415,6 +570,23 @@
     });
   }
 
+  /* —— Press kit: copy a bio to the clipboard ———————————— */
+  function initCopy() {
+    document.querySelectorAll("[data-copy]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var src = document.getElementById(btn.getAttribute("data-copy"));
+        if (!src || !navigator.clipboard) return;
+        var text = Array.prototype.map.call(src.querySelectorAll("p"), function (p) {
+          return p.textContent.replace(/\s+/g, " ").trim();
+        }).join("\n\n");
+        navigator.clipboard.writeText(text).then(function () {
+          btn.classList.add("is-copied");
+          setTimeout(function () { btn.classList.remove("is-copied"); }, 1600);
+        });
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initI18n();
     initNav();
@@ -422,5 +594,6 @@
     initFilters();
     initContactForm();
     initSubscribe();
+    initCopy();
   });
 })();
