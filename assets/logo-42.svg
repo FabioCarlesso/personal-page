@@ -1,11 +1,6 @@
-<?xml version="1.0"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140" width="200" height="140" role="img" aria-label="[42] — the ultimate answer">
-  <title>[42] — the answer</title>
-  <defs></defs>
-  
-  <path d="M30 24 L18 24 L18 116 L30 116" stroke="#E3B341" stroke-width="4" fill="none" stroke-linecap="square"></path>
-  
-  <text x="100" y="100" text-anchor="middle">42</text>
-  
-  <path d="M170 24 L182 24 L182 116 L170 116" stroke="#E3B341" stroke-width="4" fill="none" stroke-linecap="square"></path>
+  <title>[42] — the ultimate answer</title>
+  <path d="M30 24 L18 24 L18 116 L30 116" stroke="#E3B341" stroke-width="4" fill="none" stroke-linecap="square"/>
+  <path fill="#FAFAF7" d="M79.0 104.0V90.6H47.2V69.69999999999999L74.4 31.0H90.9L61.2 73.9V77.6H79.0V62.0H94.0V104.0Z M104.5 104.0V90.6L132.2 63.099999999999994Q136.4 58.9 136.4 53.0Q136.4 48.9 133.95 46.2Q131.5 43.5 127.5 43.5Q123.4 43.5 120.85 46.3Q118.3 49.099999999999994 118.3 53.5H103.3Q103.3 46.5 106.44999999999999 41.25Q109.6 36.0 115.15 33.0Q120.7 30.0 128.0 30.0Q135.1 30.0 140.39999999999998 32.75Q145.7 35.5 148.7 40.45Q151.7 45.4 151.7 51.9Q151.7 57.699999999999996 149.2 63.14999999999999Q146.7 68.6 141.1 73.9L123.7 90.5H152.5V104.0Z"/>
+  <path d="M170 24 L182 24 L182 116 L170 116" stroke="#E3B341" stroke-width="4" fill="none" stroke-linecap="square"/>
 </svg>
